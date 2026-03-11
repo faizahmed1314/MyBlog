@@ -3,14 +3,154 @@
 <PageTitle>About | MyBlog</PageTitle>
 
 <HeadContent>
-    <meta name="description" content="About the MyBlog author and the purpose of this personal blog." />
+    <meta name="description" content="CV-style profile page covering background, experience, skills, and education." />
 </HeadContent>
 
-<ContentCard Title="About">
-    <MudText Typo="Typo.body1" Class="mb-3">This is a personal blog focused on practical .NET and Blazor development.
-    </MudText>
-    <MudText Typo="Typo.body2">
-        The content is written in Markdown and rendered through Blazor WebAssembly to keep the site fast, lightweight,
-        and easy to maintain.
-    </MudText>
+<HeroSection Title="Faiz Ahmed Rasel — Senior Software Engineer" Eyebrow="Professional Profile"
+             Description="Senior Software Engineer experienced in designing scalable, secure, cloud-ready enterprise systems with focus on clean architecture, performance, and reliable Agile delivery."
+             Class="my-6">
+    <Actions>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/contact">Contact Me</MudButton>
+        <MudButton Variant="Variant.Outlined" Color="Color.Primary" Href="mailto:foyezahmedfj20@gmail.com">Email Me
+        </MudButton>
+    </Actions>
+</HeroSection>
+
+<ContentCard Title="Header" Class="mb-4">
+    <MudGrid Spacing="2">
+        <MudItem xs="12" md="6">
+            <MudText Typo="Typo.body2"><strong>Email:</strong>
+                <MudLink Href="mailto:foyezahmedfj20@gmail.com">foyezahmedfj20@gmail.com</MudLink>
+            </MudText>
+            <MudText Typo="Typo.body2"><strong>Phone:</strong> +880 1677180033</MudText>
+            <MudText Typo="Typo.body2"><strong>Location:</strong> Mirpur, Dhaka, Bangladesh</MudText>
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudText Typo="Typo.body2"><strong>LinkedIn:</strong>
+                <MudLink Href="https://www.linkedin.com/in/faiz-ahmed-rasel/" Target="_blank">faiz-ahmed-rasel</MudLink>
+            </MudText>
+            <MudText Typo="Typo.body2"><strong>GitHub:</strong>
+                <MudLink Href="https://github.com/faizahmed1314" Target="_blank">faizahmed1314</MudLink>
+            </MudText>
+        </MudItem>
+    </MudGrid>
 </ContentCard>
+
+<MudGrid Spacing="3" Class="mb-4">
+    <MudItem xs="12" md="8">
+        <ContentCard Title="Professional Summary" Class="h-100">
+            <MudText Typo="Typo.body1" Class="mb-3">
+                Senior Software Engineer with proven experience delivering enterprise systems using ASP.NET Core,
+                Web API, Microservices, SQL Server, Docker, and distributed architecture patterns.
+            </MudText>
+            <MudText Typo="Typo.body2" Class="mb-0">
+                Core strengths include secure API design (JWT authentication), performance optimization,
+                distributed systems using Redis and RabbitMQ, and consistent delivery within Agile/Scrum workflows.
+            </MudText>
+        </ContentCard>
+    </MudItem>
+
+    <MudItem xs="12" md="4">
+        <ContentCard Title="Core Skills" Class="h-100">
+            <MudStack Row="true" Wrap="Wrap.Wrap" Spacing="1">
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">C#</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">.NET 8</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">ASP.NET Core</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">Web API</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">Microservices</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">DDD</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">Entity Framework</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">SQL Server</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">Docker</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">RabbitMQ</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">Redis</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">gRPC</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">CQRS</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">React</MudChip>
+                <MudChip T="string" Variant="Variant.Outlined" Size="Size.Small">Angular</MudChip>
+            </MudStack>
+        </ContentCard>
+    </MudItem>
+</MudGrid>
+
+<ContentCard Title="Experience" Class="mb-4">
+    <div class="cv-timeline">
+        <div class="cv-item">
+            <MudText Typo="Typo.subtitle1" Class="fw-semibold mb-1">Software Engineer — BJIT Limited</MudText>
+            <MudText Typo="Typo.caption" Class="text-muted mb-2">Aug 2021 — Present · Dhaka</MudText>
+            <ul class="cv-bullets mb-0">
+                <li>Built scalable enterprise systems using ASP.NET Core and Microservices architecture.</li>
+                <li>Implemented JWT-based authentication and improved API response performance.</li>
+                <li>Optimized SQL queries for large datasets with notable filtering speed improvements.</li>
+                <li>Delivered distributed components using Redis, RabbitMQ, MinIO, and Docker.</li>
+                <li>Consistently shipped sprint commitments within Agile/Scrum workflows.</li>
+            </ul>
+        </div>
+
+        <div class="cv-item">
+            <MudText Typo="Typo.subtitle1" Class="fw-semibold mb-1">Software Engineer Trainee — Enlight Solution
+            </MudText>
+            <MudText Typo="Typo.caption" Class="text-muted mb-2">Dec 2020 — Jul 2021 · Dhaka</MudText>
+            <ul class="cv-bullets mb-0">
+                <li>Collaborated with clients to gather, refine, and document technical requirements.</li>
+                <li>Implemented Generic Repository Pattern with ASP.NET Core and Entity Framework.</li>
+                <li>Built RESTful APIs to ensure smooth UI-backend integration.</li>
+            </ul>
+        </div>
+    </div>
+</ContentCard>
+
+<MudGrid Spacing="3">
+    <MudItem xs="12" md="6">
+        <ContentCard Title="Education" Class="h-100">
+            <MudText Typo="Typo.subtitle2" Class="fw-semibold mb-1">B.Sc in Computer Science and Engineering</MudText>
+            <MudText Typo="Typo.caption" Class="text-muted mb-2">Institute of Science Trade & Technology · 2014 — 2018 ·
+                Dhaka</MudText>
+                <MudText Typo="Typo.body2" Class="mb-0">
+                    Academic foundation in software engineering principles, algorithms, and applied system development.
+                </MudText>
+            </ContentCard>
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+            <ContentCard Title="Certifications" Class="h-100">
+                <ul class="mb-0 ps-3">
+                    <li>Scrum Team Member Accredited Certification (2021)</li>
+                    <li>Professional Application Development in ASP.NET MVC (2018)</li>
+                </ul>
+            </ContentCard>
+        </MudItem>
+    </MudGrid>
+
+    <ContentCard Title="Selected Projects" Class="mt-4">
+        <div class="cv-timeline">
+            <div class="cv-item">
+                <MudText Typo="Typo.subtitle2" Class="fw-semibold mb-1">Utility Billing System</MudText>
+                <MudText Typo="Typo.caption" Class="text-muted mb-2">ASP.NET Core, React, Microservices, Redis, RabbitMQ,
+                    Docker</MudText>
+                    <ul class="cv-bullets mb-0">
+                        <li>Developed domain-focused microservices using clean architecture principles.</li>
+                        <li>Improved query performance and response handling for high-volume billing operations.</li>
+                        <li>Containerized services with Docker for repeatable deployment and environment consistency.</li>
+                    </ul>
+                </div>
+
+                <div class="cv-item">
+                    <MudText Typo="Typo.subtitle2" Class="fw-semibold mb-1">Bridge Inspection System</MudText>
+                    <MudText Typo="Typo.caption" Class="text-muted mb-2">ASP.NET, WinForms</MudText>
+                    <ul class="cv-bullets mb-0">
+                        <li>Designed scalable desktop forms with intuitive validation workflows.</li>
+                        <li>Improved reliability of data capture for field inspection scenarios.</li>
+                    </ul>
+                </div>
+
+                <div class="cv-item">
+                    <MudText Typo="Typo.subtitle2" Class="fw-semibold mb-1">Inventory Management System</MudText>
+                    <MudText Typo="Typo.caption" Class="text-muted mb-2">ASP.NET Core/MVC, RDLC, SQL, Angular</MudText>
+                    <ul class="cv-bullets mb-0">
+                        <li>Built maintainable repository-based architecture for business modules.</li>
+                        <li>Implemented RDLC reporting features for operational and management visibility.</li>
+                    </ul>
+                </div>
+            </div>
+        </ContentCard>

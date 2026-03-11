@@ -10,8 +10,13 @@
     <meta property="og:description" content="Personal blog built with Blazor WebAssembly and Markdown posts." />
 </HeadContent>
 
-<HeroSection Title="Latest Posts"             Eyebrow="Build. Test. Deploy."
-             Description="Thoughts, notes, and practical guides on building software with .NET." Class="mb-6" />
+<HeroSection Title="Latest Posts" Eyebrow="Build. Test. Deploy."
+             Description="Thoughts, notes, and practical guides on building software with .NET." Class="my-6">
+    <Actions>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/">Browse Posts</MudButton>
+        <MudButton Variant="Variant.Outlined" Color="Color.Primary" Href="/about">About This Blog</MudButton>
+    </Actions>
+</HeroSection>
 
 <MudTextField T="string" Label="Search posts" Placeholder="Search by title or keyword" Variant="Variant.Outlined"
               Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" Immediate="true" Class="mb-4 search-input"

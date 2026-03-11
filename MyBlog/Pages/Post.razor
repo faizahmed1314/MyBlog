@@ -1,0 +1,63 @@
+@page "/post/{Slug}"
+@inject PostService PostService
+
+<PageTitle>@(post is null ? "Post" : $"{post.Title} | MyBlog")</PageTitle>
+
+<HeadContent>
+    @if (post is not null)
+    {
+        <meta name="description" content="@post.Summary" />
+        <meta property="og:title" content="@post.Title" />
+        <meta property="og:description" content="@post.Summary" />
+    }
+</HeadContent>
+
+@if (isLoading)
+{
+    <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+}
+else if (post is null)
+{
+    <ContentCard Class="text-center" Title="Post not found">
+        <MudText Typo="Typo.body1" Class="mb-4">The requested article does not exist.</MudText>
+        <MudButton Href="/" Variant="Variant.Filled" Color="Color.Primary">Back to home</MudButton>
+    </ContentCard>
+}
+else
+{
+    <article class="post-content">
+        <header class="mb-4">
+            <MudText Typo="Typo.caption" Class="mb-2 text-muted">@post.PublishedOn.ToString("MMM dd, yyyy") ·
+                @post.ReadingTimeMinutes min read</MudText>
+                <MudText Typo="Typo.h3">@post.Title</MudText>
+                @if (post.Tags.Length > 0)
+                {
+                    <MudStack Row="true" Wrap="Wrap.Wrap" Spacing="1" Class="mt-3">
+                        @foreach (var tag in post.Tags)
+                        {
+                            <MudChip T="string" Size="Size.Small" Variant="Variant.Outlined">@tag</MudChip>
+                        }
+                    </MudStack>
+                }
+            </header>
+
+            <section class="markdown-body">
+                @((MarkupString)post.ContentHtml)
+            </section>
+        </article>
+    }
+
+@code {
+    [Parameter]
+    public string Slug { get; set; } = string.Empty;
+
+    private BlogPost? post;
+    private bool isLoading = true;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        isLoading = true;
+        post = await PostService.GetPostBySlugAsync(Slug);
+        isLoading = false;
+    }
+}

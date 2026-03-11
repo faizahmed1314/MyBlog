@@ -1,0 +1,19 @@
+<MudPaper Class="@($"ds-card {Class}")" Elevation="0">
+    @if (!string.IsNullOrWhiteSpace(Title))
+    {
+        <MudText Typo="Typo.h4" Class="ds-card-title">@Title</MudText>
+    }
+
+    @ChildContent
+</MudPaper>
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
+
+    [Parameter, EditorRequired]
+    public RenderFragment ChildContent { get; set; } = default!;
+}

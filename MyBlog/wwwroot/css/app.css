@@ -1,39 +1,96 @@
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+html,
+body {
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fafafa;
 }
 
 h1:focus {
     outline: none;
 }
 
-a, .btn-link {
-    color: #0071c1;
+a,
+.btn-link {
+    text-decoration: none;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+.blog-appbar {
+    background: linear-gradient(90deg, #1a1f36 0%, #2b2278 55%, #512bd4 100%);
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.blog-appbar .mud-typography,
+.blog-appbar .mud-nav-link,
+.blog-appbar .mud-button-root {
+    color: #ffffff !important;
 }
 
-.content {
-    padding-top: 1.1rem;
+.nav-inline {
+    gap: 0.5rem;
 }
 
-.valid.modified:not([type=checkbox]) {
-    outline: 1px solid #26b050;
+.top-nav-link {
+    border-radius: 8px;
+    padding: 0.35rem 0.75rem;
 }
 
-.invalid {
-    outline: 1px solid red;
+.top-nav-link.active {
+    background-color: rgba(255, 255, 255, 0.16);
+    font-weight: 700;
 }
 
-.validation-message {
-    color: red;
+.blog-hero {
+    background: linear-gradient(135deg, rgba(81, 43, 212, 0.12), rgba(14, 165, 233, 0.1));
+    border: 1px solid rgba(81, 43, 212, 0.18);
+    border-radius: 14px;
+}
+
+.post-card {
+    transition: transform 0.15s ease;
+    border-radius: 12px;
+}
+
+.post-thumbnail {
+    object-fit: cover;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+}
+
+.markdown-body {
+    font-size: 1.05rem;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.markdown-body p,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body blockquote,
+.markdown-body pre {
+    margin-bottom: 1rem;
+}
+
+.markdown-body img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+.markdown-body code {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 0.25rem;
+    padding: 0.15rem 0.3rem;
+}
+
+.markdown-body pre code {
+    display: block;
+    padding: 0.75rem;
+    overflow-x: auto;
 }
 
 #blazor-error-ui {
@@ -97,7 +154,3 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
-
-code {
-    color: #c02d76;
-}

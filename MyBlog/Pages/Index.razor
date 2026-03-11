@@ -1,0 +1,75 @@
+@page "/"
+@inject PostService PostService
+
+<PageTitle>MyBlog | Home</PageTitle>
+
+<HeadContent>
+    <meta name="description"
+          content="Personal blog built with Blazor WebAssembly. Read articles about .NET, Blazor, and web development." />
+    <meta property="og:title" content="MyBlog" />
+    <meta property="og:description" content="Personal blog built with Blazor WebAssembly and Markdown posts." />
+</HeadContent>
+
+<HeroSection Title="Latest Posts"             Eyebrow="Build. Test. Deploy."
+             Description="Thoughts, notes, and practical guides on building software with .NET." Class="mb-6" />
+
+<MudTextField T="string" Label="Search posts" Placeholder="Search by title or keyword" Variant="Variant.Outlined"
+              Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" Immediate="true" Class="mb-4 search-input"
+              @bind-Value="searchText" />
+
+@if (posts is null)
+{
+    <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+}
+else if (filteredPosts.Count == 0)
+{
+    <MudAlert Severity="Severity.Info" Variant="Variant.Outlined">
+        @if (string.IsNullOrWhiteSpace(searchText))
+        {
+            <span>No posts found. Add markdown files in <strong>wwwroot/Posts</strong> and update
+                <strong>posts.json</strong>.</span>
+            }
+        else
+            {
+                <span>No posts match "@searchText".</span>
+            }
+        </MudAlert>
+    }
+else
+    {
+        <MudGrid Spacing="3">
+            @foreach (var post in filteredPosts)
+            {
+                <MudItem xs="12" md="6">
+                    <PostCard Post="post" />
+                </MudItem>
+            }
+        </MudGrid>
+    }
+
+@code {
+    private IReadOnlyList<PostSummary>? posts;
+    private string searchText = string.Empty;
+
+    private List<PostSummary> filteredPosts => posts?
+        .Where(MatchesSearch)
+        .ToList() ?? [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        posts = await PostService.GetPostSummariesAsync();
+    }
+
+    private bool MatchesSearch(PostSummary post)
+    {
+        if (string.IsNullOrWhiteSpace(searchText))
+        {
+            return true;
+        }
+
+        return post.Title.Contains(searchText, StringComparison.OrdinalIgnoreCase)
+               || post.Summary.Contains(searchText, StringComparison.OrdinalIgnoreCase)
+               || post.Tags.Any(tag => tag.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+               || post.Keywords.Any(keyword => keyword.Contains(searchText, StringComparison.OrdinalIgnoreCase));
+    }
+}

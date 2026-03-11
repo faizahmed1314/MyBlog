@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "building-a-blazor-markdown-blog",
+    "title": "Building a Blazor Markdown Blog",
+    "summary": "How to set up a clean, static-friendly blog using Blazor WebAssembly and Markdown files.",
+    "thumbnailUrl": "images/posts/blazor-markdown.svg",
+    "publishedOn": "2026-03-01T00:00:00Z",
+    "tags": ["Blazor", ".NET", "Markdown"],
+    "keywords": ["blazor", "markdown", "static blog", "webassembly"],
+    "readingTimeMinutes": 4
+  },
+  {
+    "slug": "github-pages-with-blazor",
+    "title": "Deploying Blazor to GitHub Pages",
+    "summary": "A practical deployment flow for publishing Blazor WebAssembly apps on GitHub Pages.",
+    "thumbnailUrl": "images/posts/github-pages.svg",
+    "publishedOn": "2026-03-05T00:00:00Z",
+    "tags": ["GitHub Pages", "DevOps"],
+    "keywords": ["github pages", "deployment", "static hosting", "blazor"],
+    "readingTimeMinutes": 3
+  }
+]

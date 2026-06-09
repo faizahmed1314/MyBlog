@@ -5,8 +5,8 @@
     "summary": "How to set up a clean, static-friendly blog using Blazor WebAssembly and Markdown files.",
     "thumbnailUrl": "images/posts/blazor-markdown.svg",
     "publishedOn": "2026-03-01T00:00:00Z",
-    "tags": ["Blazor", ".NET", "Markdown"],
-    "keywords": ["blazor", "markdown", "static blog", "webassembly"],
+    "tags": [ "Blazor", ".NET", "Markdown" ],
+    "keywords": [ "blazor", "markdown", "static blog", "webassembly" ],
     "readingTimeMinutes": 4
   },
   {
@@ -15,8 +15,28 @@
     "summary": "A practical deployment flow for publishing Blazor WebAssembly apps on GitHub Pages.",
     "thumbnailUrl": "images/posts/github-pages.svg",
     "publishedOn": "2026-03-05T00:00:00Z",
-    "tags": ["GitHub Pages", "DevOps"],
-    "keywords": ["github pages", "deployment", "static hosting", "blazor"],
+    "tags": [ "GitHub Pages", "DevOps" ],
+    "keywords": [ "github pages", "deployment", "static hosting", "blazor" ],
     "readingTimeMinutes": 3
+  },
+  {
+    "slug": "sealed-in-csharp",
+    "title": "Sealed in C#: When to stop inheritance",
+    "summary": "Guidance on using the `sealed` keyword in C# to prevent inheritance and protect class behavior.",
+    "thumbnailUrl": "images/posts/sealed.svg",
+    "publishedOn": "2026-06-09T00:00:00Z",
+    "tags": [ "C#", "Design", "Best Practices" ],
+    "keywords": [ "sealed", "inheritance", "csharp", "dotnet" ],
+    "readingTimeMinutes": 3
+  },
+  {
+    "slug": "cleaning-and-running-dotnet",
+    "title": "Cleaning and Running a .NET Project",
+    "summary": "Step by step guide on how to clean and run your .NET project smoothly.",
+    "thumbnailUrl": "images/posts/dotnet-clean-run.svg",
+    "publishedOn": "2026-06-15T00:00:00Z",
+    "tags": [ ".NET", "Development", "Best Practices" ],
+    "keywords": [ ".net", "dotnet clean", "dotnet run", "csharp" ],
+    "readingTimeMinutes": 2
   }
 ]

@@ -1,6 +1,6 @@
-using System.Net.Http.Json;
 using Markdig;
 using MyBlog.Models;
+using System.Net.Http.Json;
 
 namespace MyBlog.Services;
 
@@ -10,11 +10,18 @@ public class PostService(HttpClient httpClient)
         .UseAdvancedExtensions()
         .Build();
 
+    private IReadOnlyList<PostSummary>? _cachedSummaries;
+
     public async Task<IReadOnlyList<PostSummary>> GetPostSummariesAsync()
     {
+        if (_cachedSummaries is not null)
+        {
+            return _cachedSummaries;
+        }
+
         var manifest = await httpClient.GetFromJsonAsync<List<PostManifestItem>>("Posts/posts.json") ?? [];
 
-        return manifest
+        _cachedSummaries = manifest
             .OrderByDescending(post => post.PublishedOn)
             .Select(post => new PostSummary
             {
@@ -28,6 +35,8 @@ public class PostService(HttpClient httpClient)
                 ReadingTimeMinutes = post.ReadingTimeMinutes
             })
             .ToList();
+
+        return _cachedSummaries;
     }
 
     public async Task<BlogPost?> GetPostBySlugAsync(string slug)

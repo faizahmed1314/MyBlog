@@ -19,7 +19,7 @@ public class PostService(HttpClient httpClient)
             return _cachedSummaries;
         }
 
-        var manifest = await httpClient.GetFromJsonAsync<List<PostManifestItem>>("Posts/posts.json") ?? [];
+        var manifest = await httpClient.GetFromJsonAsync<List<PostManifestItem>>($"Posts/posts.json?v={DateTime.UtcNow.Ticks}") ?? [];
 
         _cachedSummaries = manifest
             .OrderByDescending(post => post.PublishedOn)
@@ -48,7 +48,7 @@ public class PostService(HttpClient httpClient)
             return null;
         }
 
-        var markdown = await httpClient.GetStringAsync($"Posts/{summary.Slug}.md");
+        var markdown = await httpClient.GetStringAsync($"Posts/{summary.Slug}.md?v={DateTime.UtcNow.Ticks}");
         var html = Markdown.ToHtml(markdown, _markdownPipeline);
 
         return new BlogPost
